@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="800px" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- Laptop Base -->
+        <rect fill="#E2E8F0" x="100" y="200" width="200" height="120" rx="10"/>
+        <rect fill="#2563EB" x="120" y="220" width="160" height="80" rx="5"/>
+        
+        <!-- Code Symbols -->
+        <text font-family="monospace" font-size="14" fill="#FFFFFF">
+            <tspan x="135" y="250">&lt;/&gt;</tspan>
+            <tspan x="135" y="270">{ }</tspan>
+            <tspan x="135" y="290">// code</tspan>
+        </text>
+        
+        <!-- Coffee Cup -->
+        <path d="M290,260 L310,260 L305,290 L295,290 Z" fill="#94A3B8"/>
+        <ellipse fill="#94A3B8" cx="300" cy="260" rx="10" ry="3"/>
+        
+        <!-- Floating Elements -->
+        <circle fill="#3B82F6" cx="80" cy="150" r="20" opacity="0.6"/>
+        <circle fill="#8B5CF6" cx="320" cy="180" r="15" opacity="0.6"/>
+        <circle fill="#2563EB" cx="280" cy="120" r="25" opacity="0.6"/>
+    </g>
+</svg> 

@@ -14,19 +14,19 @@ const CodeBlock = () => (
     <pre className="text-sm font-mono">
       <code className="text-gray-400">
         <span className="text-purple-400">const</span>{" "}
-        <span className="text-blue-400">developer</span> = {"{"}
+        <span className="text-purple-400">developer</span> = {"{"}
         <br />
-        {"  "}name: <span className="text-green-400">&quot;Karan&quot;</span>,
+        {"  "}name: <span className="text-purple-400">&quot;Keval&quot;</span>,
         <br />
         {"  "}role:{" "}
-        <span className="text-green-400">&quot;Full Stack Dev&quot;</span>,
+        <span className="text-purple-400">&quot;Full Stack Dev&quot;</span>,
         <br />
         {"  "}skills: [
-        <span className="text-orange-400">&quot;React&quot;</span>,{" "}
-        <span className="text-orange-400">&quot;Node.js&quot;</span>],
+        <span className="text-purple-400">&quot;React&quot;</span>,{" "}
+        <span className="text-purple-400">&quot;Node.js&quot;</span>],
         <br />
         {"  "}loves:{" "}
-        <span className="text-green-400">
+        <span className="text-purple-400">
           &quot;Building Amazing Apps&quot;
         </span>
         <br />
@@ -56,12 +56,15 @@ const FloatingIcon = ({ icon, className, delay = 0 }) => (
 const Hero = () => {
   const router = useRouter();
   const socialLinks = [
-    { icon: "mdi:github", href: "https://github.com/karanharsora12" },
-    { icon: "mdi:twitter", href: "https://x.com/HarsoraKaran" },
-    { icon: "mdi:instagram", href: "http://instagram.com/karanharsora12/" },
+    { icon: "mdi:github", href: "https://github.com/dkeval08" },
+    { icon: "mdi:twitter", href: "https://x.com/DhandhukiyaKeval" },
+    {
+      icon: "mdi:instagram",
+      href: "https://www.instagram.com/keval_prajapati475/",
+    },
     {
       icon: "mdi:linkedin",
-      href: "https://www.linkedin.com/in/karan-harsora-6ab24024a/",
+      href: "https://www.linkedin.com/in/Keval-Dhandhukiya-6ab24024a/",
     },
   ];
 
@@ -79,7 +82,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.3 }}
         transition={{ duration: 1 }}
-        className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-orange-500/30 rounded-full blur-3xl"
+        className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-3xl"
       />
 
       <div className="container mx-auto px-4 relative">
@@ -95,10 +98,10 @@ const Hero = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-block mb-4 px-4 py-2 bg-orange-500/10 rounded-full text-orange-400 text-sm font-medium border border-orange-500/20"
+              className="inline-block mb-4 px-4 py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm font-medium border border-purple-500/20"
             >
               <span className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-orange-500 rounded-full animate-pulse" />
+                <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
                 Available for Projects
               </span>
             </motion.div>
@@ -117,13 +120,13 @@ const Hero = () => {
               transition={{ delay: 0.4 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
             >
-              Karan Harsora
+              Keval Dhandhukiya
             </motion.h1>
             <motion.h2
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-orange-500 mb-6"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-purple-500 mb-6"
             >
               Full Stack Developer
             </motion.h2>
@@ -158,7 +161,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.1 }}
-                className="px-6 py-3 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition-colors"
+                className="px-6 py-3 bg-purple-500 text-white rounded-full hover:bg-purple-600 transition-colors"
                 onClick={() => {
                   router.push("#portfolio");
                 }}
@@ -173,7 +176,7 @@ const Hero = () => {
                 onClick={() => {
                   const link = document.createElement("a");
                   link.href = "/resume.pdf"; // Make sure to add your resume PDF in the public folder
-                  link.download = "Karan_Harsora_Resume.pdf";
+                  link.download = "Keval_Dhandhukiya_Resume.pdf";
                   link.click();
                 }}
               >
@@ -219,7 +222,7 @@ const Hero = () => {
                 sizes="(max-width: 768px) 300px, (max-width: 1200px) 400px, 500px"
                 priority
               />
-              <div className="absolute inset-0 border-2 border-orange-500/20 rounded-full z-[3]" />
+              <div className="absolute inset-0 border-2 border-purple-500/20 rounded-full z-[3]" />
 
               {/* Floating Tech Icons */}
               <FloatingIcon
@@ -238,7 +241,7 @@ const Hero = () => {
                 delay={1.1}
               />
               <FloatingIcon
-                icon="logos:typescript-icon"
+                icon="logos:nextjs"
                 className="left-10 top-0 z-[4]"
                 delay={1.2}
               />

@@ -51,19 +51,19 @@ const ServiceCard = ({ service, index }) => {
       className="group relative bg-[#1a1a1a] rounded-2xl p-6 hover:bg-[#242424] transition-all duration-300"
     >
       {/* Gradient Border */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-orange-500/20 to-purple-500/20 -z-10 opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/20 to-purple-500/20 -z-10 opacity-0 group-hover:opacity-100 transition-opacity" />
 
       {/* Icon */}
       <motion.div
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 300 }}
-        className="w-16 h-16 rounded-xl bg-orange-500/10 flex items-center justify-center mb-6 group-hover:bg-orange-500/20 transition-colors"
+        className="w-16 h-16 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors"
       >
-        <Icon icon={service.icon} className="w-8 h-8 text-orange-500" />
+        <Icon icon={service.icon} className="w-8 h-8 text-purple-500" />
       </motion.div>
 
       {/* Content */}
-      <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-orange-500 transition-colors">
+      <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-purple-500 transition-colors">
         {service.title}
       </h3>
       <p className="text-gray-400 text-sm leading-relaxed">
@@ -77,7 +77,7 @@ const ServiceCard = ({ service, index }) => {
         transition={{ duration: 0.2 }}
         className="absolute bottom-6 right-6"
       >
-        <Icon icon="ph:arrow-right-bold" className="w-5 h-5 text-orange-500" />
+        <Icon icon="ph:arrow-right-bold" className="w-5 h-5 text-purple-500" />
       </motion.div>
     </motion.div>
   );
@@ -98,7 +98,7 @@ const Services = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.5 }}
         transition={{ duration: 1 }}
-        className="absolute top-20 right-0 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl"
+        className="absolute top-20 right-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
       />
 
       {/* Content */}

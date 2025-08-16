@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center space-y-8">
           {/* Logo */}
-          <div className="text-orange-500 text-2xl font-bold">LOGO</div>
+          <div className="text-purple-500 text-2xl font-bold">LOGO</div>
 
           {/* Navigation Links */}
           <nav className="flex flex-wrap justify-center gap-8 text-gray-400">
@@ -40,7 +40,7 @@ const Footer = () => {
           {/* Social Media Icons */}
           <div className="flex gap-6">
             <a
-              href="http://instagram.com/karanharsora12/"
+              href="https://www.instagram.com/keval_prajapati475/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
@@ -48,7 +48,7 @@ const Footer = () => {
               <Icon icon="mdi:instagram" className="w-6 h-6" />
             </a>
             <a
-              href="https://www.linkedin.com/in/karan-harsora-6ab24024a/"
+              href="https://www.linkedin.com/in/Keval-Dhandhukiya-6ab24024a/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
@@ -56,7 +56,7 @@ const Footer = () => {
               <Icon icon="mdi:linkedin" className="w-6 h-6" />
             </a>
             <a
-              href="https://dribbble.com/karanharsora12"
+              href="https://dribbble.com/KevalDhandhukiya12"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
@@ -64,7 +64,7 @@ const Footer = () => {
               <Icon icon="mdi:dribbble" className="w-6 h-6" />
             </a>
             <a
-              href="https://www.behance.net/karanharsora"
+              href="https://www.behance.net/KevalDhandhukiya"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
@@ -77,8 +77,8 @@ const Footer = () => {
           <div className="flex flex-col sm:flex-row items-center gap-4 text-gray-400">
             <div className="flex items-center gap-2">
               <Icon icon="mdi:email-outline" className="w-5 h-5" />
-              <a href="mailto:karanharsora2@gmail.com">
-                karanharsora2@gmail.com
+              <a href="mailto:KevalDhandhukiya2@gmail.com">
+                KevalDhandhukiya2@gmail.com
               </a>
             </div>
             <div className="flex items-center gap-2">

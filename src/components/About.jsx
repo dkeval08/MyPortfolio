@@ -81,7 +81,7 @@ const SkillBar = ({ skill }) => (
           />
           {/* Progress Circle */}
           <motion.circle
-            className="text-orange-500 stroke-current"
+            className="text-purple-500 stroke-current"
             strokeWidth="8"
             fill="transparent"
             r="42"
@@ -159,7 +159,7 @@ const About = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 0.5 }}
                 transition={{ duration: 1 }}
-                className="absolute -top-20 -right-20 w-[300px] h-[300px] bg-orange-500/30 rounded-full blur-3xl"
+                className="absolute -top-20 -right-20 w-[300px] h-[300px] bg-purple-500/30 rounded-full blur-3xl"
               />
               <motion.div
                 initial={{ opacity: 0 }}
@@ -171,7 +171,7 @@ const About = () => {
               {/* Image Container with Effects */}
               <div className="relative w-full h-full rounded-2xl overflow-hidden">
                 {/* Border Gradient */}
-                <div className="absolute inset-0 p-1 bg-gradient-to-br from-orange-500/50 via-purple-500/50 to-blue-500/50 rounded-2xl">
+                <div className="absolute inset-0 p-1 bg-gradient-to-br from-purple-500/50 via-purple-500/50 to-purple-500/50 rounded-2xl">
                   <div className="absolute inset-0 bg-[#1a1a1a] rounded-2xl" />
                 </div>
 
@@ -193,7 +193,7 @@ const About = () => {
                   {/* Decorative Elements */}
                   <div className="absolute bottom-6 left-6 right-6">
                     <div className="flex items-center gap-4 text-white/90">
-                      <div className="w-12 h-12 rounded-xl bg-orange-500/20 backdrop-blur-sm border border-orange-500/20 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-xl bg-purple-500/20 backdrop-blur-sm border border-purple-500/20 flex items-center justify-center">
                         <Icon icon="ph:code-bold" className="w-6 h-6" />
                       </div>
                       <div>
@@ -210,7 +210,7 @@ const About = () => {
               </div>
 
               {/* Decorative Corner Elements */}
-              <div className="absolute -top-4 -left-4 w-8 h-8 border-t-2 border-l-2 border-orange-500/50 rounded-tl-lg" />
+              <div className="absolute -top-4 -left-4 w-8 h-8 border-t-2 border-l-2 border-purple-500/50 rounded-tl-lg" />
               <div className="absolute -bottom-4 -right-4 w-8 h-8 border-b-2 border-r-2 border-purple-500/50 rounded-br-lg" />
             </div>
           </motion.div>
@@ -255,11 +255,11 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="px-8 py-3 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition-colors mb-12"
+              className="px-8 py-3 bg-purple-500 text-white rounded-full hover:bg-purple-600 transition-colors mb-12"
               onClick={() => {
                 const link = document.createElement("a");
                 link.href = "/resume.pdf"; // Make sure to add your resume PDF in the public folder
-                link.download = "Karan_Harsora_Resume.pdf";
+                link.download = "Keval_Dhandhukiya_Resume.pdf";
                 link.click();
               }}
             >

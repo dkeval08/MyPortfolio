@@ -17,31 +17,6 @@ const projects = [
     image: "/project2.jpg",
     images: ["/app1.jpg", "/app2.jpg", "/app3.jpg", "/app4.jpg"],
   },
-  {
-    title: "UI Elements",
-    category: "Web Design",
-    image: "/project3.jpg",
-    images: ["/web1.jpg", "/web2.jpg", "/web3.jpg", "/web4.jpg"],
-  },
-  // Duplicate projects to fill the grid
-  {
-    title: "Mobile Project",
-    category: "Mobile Design",
-    image: "/project1.jpg",
-    images: ["/mobile1.jpg", "/mobile2.jpg", "/mobile3.jpg", "/mobile4.jpg"],
-  },
-  {
-    title: "Dark Theme",
-    category: "App Design",
-    image: "/project2.jpg",
-    images: ["/app1.jpg", "/app2.jpg", "/app3.jpg", "/app4.jpg"],
-  },
-  {
-    title: "UI Elements",
-    category: "Web Design",
-    image: "/project3.jpg",
-    images: ["/web1.jpg", "/web2.jpg", "/web3.jpg", "/web4.jpg"],
-  },
 ];
 
 // Placeholder component for when image fails to load
@@ -49,13 +24,13 @@ const PlaceholderIllustration = ({ title }) => (
   <div className="absolute inset-0 bg-[#1a1a1a] flex items-center justify-center overflow-hidden">
     {/* Abstract Background Pattern */}
     <div className="absolute inset-0">
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-orange-500/10 via-purple-500/10 to-blue-500/10" />
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-500/10 via-purple-500/10 to-purple-500/10" />
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
     </div>
 
     {/* Decorative Elements */}
     <div className="relative z-10 flex flex-col items-center gap-4">
-      <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-purple-500 rounded-xl flex items-center justify-center">
+      <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-500 rounded-xl flex items-center justify-center">
         <Icon icon="ph:image-square-bold" className="w-8 h-8 text-white" />
       </div>
       <div className="text-center">
@@ -64,7 +39,7 @@ const PlaceholderIllustration = ({ title }) => (
       </div>
 
       {/* Decorative Circles */}
-      <div className="absolute -top-20 -right-20 w-40 h-40 bg-orange-500/10 rounded-full blur-2xl" />
+      <div className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/10 rounded-full blur-2xl" />
       <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/10 rounded-full blur-2xl" />
     </div>
   </div>
@@ -123,7 +98,7 @@ const ProjectCard = ({ project, index }) => {
                   onError={(e) => {
                     e.target.style.display = "none";
                     e.target.parentElement.innerHTML = `
-                      <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-500/20 to-purple-500/20">
+                      <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-500/20 to-purple-500/20">
                         <svg class="w-4 h-4 text-white/40" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
@@ -177,7 +152,7 @@ const Projects = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-wrap justify-center gap-6 mb-12"
           >
-            <button className="text-orange-500 px-4 py-2 rounded-full border border-orange-500">
+            <button className="text-purple-500 px-4 py-2 rounded-full border border-purple-500">
               All
             </button>
             <button className="text-gray-400 px-4 py-2 rounded-full border border-gray-700 hover:border-gray-500 hover:text-gray-300 transition-colors">

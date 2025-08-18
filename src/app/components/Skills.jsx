@@ -99,7 +99,7 @@ const CategoryButton = ({ category, isActive, onClick }) => (
     onClick={onClick}
     className={`relative px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 ${
       isActive
-        ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-500/25"
+        ? "bg-gradient-to-r from-purple-300 to-purple-600 text-white shadow-lg shadow-blue-500/25"
         : "bg-gray-800/50 text-gray-400 hover:text-white hover:bg-gray-700/50 border border-gray-600/30 hover:border-gray-500/50"
     }`}
     whileHover={{ scale: 1.05 }}
@@ -108,7 +108,7 @@ const CategoryButton = ({ category, isActive, onClick }) => (
     {/* Background Animation */}
     {isActive && (
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl"
+        className="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-600 rounded-xl"
         layoutId="activeCategory"
         transition={{ type: "spring", stiffness: 400, damping: 25 }}
       />
@@ -169,22 +169,23 @@ export const Skills = () => {
           transition={{ duration: 0.3 }}
         >
           <motion.h2
-            className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent mb-4"
+            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-purple-300 to-purple-500 bg-clip-text text-transparent mb-4"
             initial={{ scale: 0.5 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.4, type: "spring" }}
           >
-            Skills & Expertise
+            My Playground
           </motion.h2>
-          <motion.p
-            className="text-gray-400 text-lg max-w-2xl mx-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.1, duration: 0.3 }}
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="inline-block mb-4"
           >
-            A comprehensive showcase of my technical abilities across different
-            domains
-          </motion.p>
+            <span className="text-white text-sm font-medium tracking-wider uppercase">
+              A comprehensive showcase of my technical abilities
+            </span>
+          </motion.div>
         </motion.div>
 
         {/* Category Filters */}
@@ -207,7 +208,7 @@ export const Skills = () => {
         {/* Skills Grid */}
         <motion.div
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
         >
           <AnimatePresence mode="wait">
             {filteredSkills.map((skill, index) => (

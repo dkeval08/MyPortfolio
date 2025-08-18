@@ -141,7 +141,7 @@ const Projects = () => {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl font-bold text-white mb-8"
           >
-            My Portfolio
+            My Projects
           </motion.h2>
 
           {/* Category Filter */}

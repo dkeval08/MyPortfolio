@@ -4,13 +4,13 @@ import Link from "next/link";
 import { useState } from "react";
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(true);
 
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", () => {
-      setIsScrolled(window.scrollY > 20);
-    });
-  }
+  // if (typeof window !== "undefined") {
+  //   window.addEventListener("scroll", () => {
+  //     setIsScrolled(window.scrollY > 20);
+  //   });
+  // }
 
   const handleScroll = (e, targetId) => {
     e.preventDefault();
@@ -40,9 +40,7 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 ${
-        isScrolled ? "bg-black/80 backdrop-blur-lg shadow-lg" : "bg-transparent"
-      } transition-all duration-300`}
+      className={`fixed top-0 left-0 right-0 z-50  bg-black/60 backdrop-blur-lg shadow-lg  transition-all duration-300`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -73,15 +71,6 @@ const Header = () => {
               </motion.div>
             ))}
           </nav>
-
-          <motion.button
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            className="px-6 py-2 bg-purple-500 text-white rounded-full hover:bg-purple-600 transition-colors"
-          >
-            HIRE
-          </motion.button>
         </div>
       </div>
     </motion.header>

@@ -9,8 +9,8 @@ export default function Home() {
     <main className="min-h-screen bg-black">
       <Hero />
       <Skills />
-      <About />
       <Projects />
+      <About />
       <Contact />
     </main>
   );

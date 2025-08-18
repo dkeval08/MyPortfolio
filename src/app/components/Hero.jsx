@@ -71,7 +71,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen bg-black py-30 md:py-32 overflow-hidden"
+      className="relative min-h-screen mx-auto max-w-7xl bg-black py-30 md:py-32 "
     >
       {/* Animated Gradient Orbs */}
       <motion.div
@@ -110,7 +110,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-purple-500 mb-6"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-white via-purple-400 to-purple-500 bg-clip-text text-transparent mb-6"
             >
               Full Stack Developer
             </motion.h2>

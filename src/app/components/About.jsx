@@ -3,146 +3,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 
-const skills = [
-  {
-    name: "React.js",
-    percentage: 95,
-    icon: "logos:react",
-  },
-  {
-    name: "React Native",
-    percentage: 90,
-    icon: "logos:react",
-  },
-  {
-    name: "Laravel",
-    percentage: 85,
-    icon: "logos:laravel",
-  },
-  {
-    name: "Node.js",
-    percentage: 90,
-    icon: "logos:nodejs-icon",
-  },
-  {
-    name: "Express.js",
-    percentage: 88,
-    icon: "logos:express",
-  },
-  {
-    name: "MongoDB",
-    percentage: 85,
-    icon: "logos:mongodb-icon",
-  },
-  {
-    name: "MySQL",
-    percentage: 90,
-    icon: "logos:mysql",
-  },
-  {
-    name: "PostgreSQL",
-    percentage: 85,
-    icon: "logos:postgresql",
-  },
-  {
-    name: "Vercel",
-    percentage: 95,
-    icon: "logos:vercel-icon",
-  },
-  {
-    name: "Namecheap",
-    percentage: 90,
-    icon: "simple-icons:namecheap",
-  },
-];
-
-const SkillBar = ({ skill }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-    viewport={{ once: true }}
-    className="flex flex-col items-center group"
-  >
-    <div className="relative w-16 h-16 mb-4">
-      {/* Dark Background Circle */}
-      <div className="absolute inset-0 bg-[#1a1a1a] rounded-full border border-gray-800" />
-
-      <div className="absolute inset-0">
-        <svg className="w-full h-full" viewBox="0 0 100 100">
-          {/* Background Circle */}
-          <circle
-            className="text-[#333333] stroke-current"
-            strokeWidth="8"
-            fill="transparent"
-            r="42"
-            cx="50"
-            cy="50"
-          />
-          {/* Progress Circle */}
-          <motion.circle
-            className="text-purple-500 stroke-current"
-            strokeWidth="8"
-            fill="transparent"
-            r="42"
-            cx="50"
-            cy="50"
-            style={{
-              strokeDasharray: "263.76",
-              strokeDashoffset: 263.76 - (263.76 * skill.percentage) / 100,
-              strokeLinecap: "round",
-              filter: "drop-shadow(0 0 4px rgba(249, 115, 22, 0.4))",
-            }}
-          />
-        </svg>
-      </div>
-
-      {/* Icon Container with White Background for Dark Icons */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-8 h-8 flex items-center justify-center">
-          {skill.icon === "logos:express" ? (
-            // Special handling for Express.js logo to make it white
-            <Icon
-              icon="simple-icons:express"
-              className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300"
-            />
-          ) : skill.icon === "simple-icons:namecheap" ? (
-            // Special handling for Namecheap logo to make it white
-            <Icon
-              icon={skill.icon}
-              className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300"
-            />
-          ) : (
-            // For other logos that need to remain colored
-            <Icon
-              icon={skill.icon}
-              className="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
-            />
-          )}
-        </div>
-      </div>
-    </div>
-
-    {/* Percentage and Name */}
-    <div className="text-center">
-      <p className="font-medium text-white mb-1 text-lg">{skill.percentage}%</p>
-      <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
-        {skill.name}
-      </p>
-    </div>
-  </motion.div>
-);
-
-const About = () => {
+export const About = () => {
   return (
     <section
       id="about"
       className="relative bg-black py-12 md:py-24 overflow-hidden"
     >
-      {/* Background Elements */}
-      {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(30,30,30,1),rgba(0,0,0,1))]" /> */}
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
-
       <div className="container mx-auto px-4 relative">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Left Image */}
@@ -267,11 +133,6 @@ const About = () => {
             </motion.button>
 
             {/* Skills Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
-              {skills.map((skill, index) => (
-                <SkillBar key={index} skill={skill} />
-              ))}
-            </div>
           </motion.div>
         </div>
       </div>

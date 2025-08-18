@@ -3,12 +3,12 @@ import About from "@/app/components/About";
 import Services from "@/app/components/Experience";
 import Projects from "@/app/components/Projects";
 import Contact from "@/app/components/Contact";
-
+import Skills from "./components/Skills";
 export default function Home() {
   return (
     <main className="min-h-screen bg-black">
       <Hero />
-      <Services />
+      <Skills />
       <About />
       <Projects />
       <Contact />

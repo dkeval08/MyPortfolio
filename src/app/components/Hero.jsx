@@ -41,7 +41,7 @@ const FloatingIcon = ({ icon, className, delay = 0 }) => (
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay }}
-    className={`absolute ${className} hidden lg:block`}
+    className={`absolute ${className} `}
   >
     <motion.div
       animate={{ y: [-10, 10, -10] }}
@@ -57,26 +57,22 @@ const Hero = () => {
   const router = useRouter();
   const socialLinks = [
     { icon: "mdi:github", href: "https://github.com/dkeval08" },
-    { icon: "mdi:twitter", href: "https://x.com/DhandhukiyaKeval" },
+    { icon: "mdi:twitter", href: "https://x.com/GamerboyA65016" },
     {
       icon: "mdi:instagram",
       href: "https://www.instagram.com/keval_prajapati475/",
     },
     {
       icon: "mdi:linkedin",
-      href: "https://www.linkedin.com/in/Keval-Dhandhukiya-6ab24024a/",
+      href: "https://www.linkedin.com/in/keval-dhandhukiya-6aaa1329a/",
     },
   ];
 
   return (
     <section
       id="home"
-      className="relative min-h-screen bg-black py-16 md:py-32 overflow-hidden"
+      className="relative min-h-screen bg-black py-30 md:py-32 overflow-hidden"
     >
-      {/* Background Elements */}
-      {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(30,30,30,1),rgba(0,0,0,1))]" /> */}
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
-
       {/* Animated Gradient Orbs */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -94,18 +90,6 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="flex-1 text-white relative z-10 text-center lg:text-left"
           >
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-block mb-4 px-4 py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm font-medium border border-purple-500/20"
-            >
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
-                Available for Projects
-              </span>
-            </motion.div>
-
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -138,7 +122,7 @@ const Hero = () => {
               className="text-gray-400 text-lg mb-8 max-w-lg"
             >
               Passionate about creating beautiful, functional, and user-friendly
-              applications. Transforming ideas into reality through code.
+              Websites. Transforming ideas into reality through code.
             </motion.p>
 
             <div className="flex gap-4 mb-8">
@@ -191,16 +175,16 @@ const Hero = () => {
               className="grid grid-cols-3 gap-8 mt-12"
             >
               <div>
-                <h3 className="text-3xl font-bold mb-1">5+</h3>
+                <h3 className="text-3xl font-bold mb-1">1+</h3>
                 <p className="text-gray-400">Years Coding</p>
               </div>
               <div>
-                <h3 className="text-3xl font-bold mb-1">50+</h3>
+                <h3 className="text-3xl font-bold mb-1">15+</h3>
                 <p className="text-gray-400">Projects Done</p>
               </div>
               <div>
-                <h3 className="text-3xl font-bold mb-1">20+</h3>
-                <p className="text-gray-400">Happy Clients</p>
+                <h3 className="text-3xl font-bold mb-1">3500+</h3>
+                <p className="text-gray-400">Git Contributions</p>
               </div>
             </motion.div>
           </motion.div>

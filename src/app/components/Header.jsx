@@ -52,7 +52,7 @@ const Header = () => {
             transition={{ delay: 0.2 }}
             className="text-2xl font-bold text-purple-500"
           >
-            LOGO
+            My Portfolio
           </motion.div>
 
           <nav className="hidden md:flex items-center space-x-8">

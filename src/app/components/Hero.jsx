@@ -221,7 +221,7 @@ const Hero = () => {
                 delay={0.9}
               />
               <FloatingIcon
-                icon="logos:nodejs"
+                icon="logos:nodejs-icon"
                 className="left-0 lg:left-10 bottom-10 z-[4]"
                 delay={1.0}
               />
@@ -231,7 +231,7 @@ const Hero = () => {
                 delay={1.1}
               />
               <FloatingIcon
-                icon="logos:nextjs"
+                icon="logos:nextjs-icon"
                 className="left-10 top-0 z-[4]"
                 delay={1.2}
               />

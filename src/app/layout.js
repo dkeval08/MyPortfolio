@@ -49,11 +49,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <head>
-          <link rel="icon" href="/favicon.ico" />
-          <link rel="icon" type="image/png" href="/favicon.ico" />
-          <link rel="apple-touch-icon" href="/favicon.ico" />
-        </head>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}

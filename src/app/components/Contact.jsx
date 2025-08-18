@@ -42,6 +42,31 @@ const Contact = () => {
 
       <div className="container mx-auto px-4 relative">
         <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-purple-300 to-purple-500 bg-clip-text text-transparent mb-4"
+            initial={{ scale: 0.5 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.4, type: "spring" }}
+          >
+            Contact me
+          </motion.h2>
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="inline-block mb-4"
+          >
+            <span className="text-white text-sm font-medium tracking-wider uppercase">
+              Cultivating Connections: Bring Out Any And Connect With Me
+            </span>
+          </motion.div>
+        </motion.div>
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -54,7 +79,7 @@ const Contact = () => {
           <p className="text-gray-400">
             Cultivating Connections: Bring Out Any And Connect With Me
           </p>
-        </motion.div>
+        </motion.div> */}
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

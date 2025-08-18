@@ -86,7 +86,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center gap-2">
               <Icon icon="mdi:phone-outline" className="w-5 h-5" />
-              <span>+91 7990471362</span>
+              <a href="tel:+917990471362">+91 7990471362</a>
             </div>
           </div>
         </div>

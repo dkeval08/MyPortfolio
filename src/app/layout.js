@@ -14,13 +14,47 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "My Portfolio",
-  description: "My Portfolio",
+  title: "My Portfolio - Keval",
+  description: "One Page website describing About Me",
+  icons: {
+    icon: "/favicon.ico", // place favicon.ico in /public
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico", // optional, for iOS
+  },
+  openGraph: {
+    title: "My Portfolio - Keval",
+    description: "One Page website describing About Me",
+    url: "https://image-k-format.vercel.app",
+    siteName: "My Portfolio",
+    images: [
+      {
+        url: "https://image-k-format.vercel.app/logo.png", // ⚡ add an OG image in /public
+        width: 1200,
+        height: 630,
+        alt: "My Portfolio - Keval",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "My Portfolio - K",
+    description: "One Page website describing About Me",
+    images: ["https://image-k-format.vercel.app/logo.png"], // ⚡ same OG image
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <head>
+          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" type="image/png" href="/favicon.ico" />
+          <link rel="apple-touch-icon" href="/favicon.ico" />
+        </head>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >

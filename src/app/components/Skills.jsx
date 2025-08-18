@@ -161,7 +161,7 @@ export const Skills = () => {
         <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-gray-900/5 to-transparent blur-xl" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-0">
         {/* Header */}
         <motion.div
           className="text-center mb-16"

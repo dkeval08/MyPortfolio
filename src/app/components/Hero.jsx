@@ -78,7 +78,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.3 }}
         transition={{ duration: 1 }}
-        className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-3xl"
+        className="absolute -top-0 -right-0 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-3xl"
       />
 
       <div className="container mx-auto px-4 relative">

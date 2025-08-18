@@ -24,11 +24,11 @@ export const metadata = {
   openGraph: {
     title: "My Portfolio - Keval",
     description: "One Page website describing About Me",
-    url: "https://image-k-format.vercel.app",
+    url: "https://my-portfolio-omega-neon-86.vercel.app/",
     siteName: "My Portfolio",
     images: [
       {
-        url: "https://image-k-format.vercel.app/logo.png", // ⚡ add an OG image in /public
+        url: "https://my-portfolio-omega-neon-86.vercel.app//logo.png", // ⚡ add an OG image in /public
         width: 1200,
         height: 630,
         alt: "My Portfolio - Keval",
@@ -41,7 +41,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "My Portfolio - K",
     description: "One Page website describing About Me",
-    images: ["https://image-k-format.vercel.app/logo.png"], // ⚡ same OG image
+    images: ["https://my-portfolio-omega-neon-86.vercel.app//logo.png"], // ⚡ same OG image
   },
 };
 

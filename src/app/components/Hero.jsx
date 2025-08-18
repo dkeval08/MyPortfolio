@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import { useRouter } from "next/navigation";
+import { handleScroll } from "./Header";
 
 const CodeBlock = () => (
   <motion.div
@@ -146,8 +147,8 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.1 }}
                 className="px-6 py-3 bg-purple-500 text-white rounded-full hover:bg-purple-600 transition-colors"
-                onClick={() => {
-                  router.push("#portfolio");
+                onClick={(e) => {
+                  handleScroll(e, "Projects");
                 }}
               >
                 View Projects

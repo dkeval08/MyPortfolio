@@ -71,7 +71,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen mx-auto max-w-7xl bg-black py-30 md:py-32 "
+      className="relative min-h-screen flex items-center mx-auto max-w-7xl bg-black py-30 md:py-32 "
     >
       {/* Animated Gradient Orbs */}
       <motion.div

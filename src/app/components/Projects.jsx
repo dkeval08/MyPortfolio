@@ -1,179 +1,649 @@
 "use client";
-import { motion, useInView } from "framer-motion";
-import Image from "next/image";
-import { useRef, useState } from "react";
-import { Icon } from "@iconify/react";
+import React, { useState, useRef } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
+import {
+  X,
+  ExternalLink,
+  Github,
+  Zap,
+  Wand2,
+  Crop,
+  Filter,
+  Download,
+  Share2,
+  Heart,
+  Palette,
+  Code,
+  Globe,
+} from "lucide-react";
 
 const projects = [
   {
-    title: "Mobile Project",
-    category: "Mobile Design",
-    image: "/project1.jpg",
-    images: ["/mobile1.jpg", "/mobile2.jpg", "/mobile3.jpg", "/mobile4.jpg"],
+    id: 1,
+    title: "My Portfolio",
+    category: "Frontend Development",
+    shortDescription: "Personal portfolio showcasing my skills and projects",
+    description:
+      "A modern, responsive portfolio website built with Next.js and React, featuring smooth animations, dark theme design, and showcasing my development skills and projects. The site includes interactive elements, project galleries, and contact functionality.",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=400&h=300&fit=crop&q=80",
+    ],
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Vercel",
+    ],
+    features: [
+      {
+        icon: <Palette className="w-6 h-6" />,
+        title: "Modern Design",
+        description:
+          "Clean, modern interface with dark theme and smooth animations",
+      },
+      {
+        icon: <Code className="w-6 h-6" />,
+        title: "Interactive Elements",
+        description: "Engaging hover effects and micro-interactions throughout",
+      },
+      {
+        icon: <Globe className="w-6 h-6" />,
+        title: "Responsive Layout",
+        description: "Optimized for all devices from mobile to desktop",
+      },
+    ],
+    liveUrl: "https://your-portfolio.vercel.app",
+    githubUrl: "https://github.com/dkeval08/MyPortfolio",
   },
   {
-    title: "Dark Theme",
-    category: "App Design",
-    image: "/project2.jpg",
-    images: ["/app1.jpg", "/app2.jpg", "/app3.jpg", "/app4.jpg"],
+    id: 2,
+    title: "AI KGenesis",
+    category: "AI & Machine Learning",
+    shortDescription: "AI Image Generator - Create stunning images with AI",
+    description:
+      "Create, save, and share stunning AI-generated images instantly. No login required – simple, fast, and creative. Built with cutting-edge AI models for high-quality image generation.",
+    image:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1686191128892-12460f12b1d7?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1684487747385-8c2b2a5a4c8f?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1675557009874-4c93af1b7f27?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1682687982183-c2937a74257c?w=400&h=300&fit=crop&q=80",
+    ],
+    technologies: [
+      "Next.js",
+      "Hugging Face API",
+      "Stability AI",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Vercel",
+    ],
+    features: [
+      {
+        icon: <Download className="w-6 h-6" />,
+        title: "HD Downloads",
+        description:
+          "Download your creations in high resolution for professional use",
+      },
+      {
+        icon: <Share2 className="w-6 h-6" />,
+        title: "One-Click Share",
+        description: "Easily share images via link or social apps",
+      },
+      {
+        icon: <Heart className="w-6 h-6" />,
+        title: "Favorites",
+        description: "Save images you love for later access",
+      },
+      {
+        icon: <Zap className="w-6 h-6" />,
+        title: "Lightning Fast",
+        description:
+          "Generate high-quality images in seconds with optimized AI models",
+      },
+    ],
+    liveUrl: "https://ai-k-genesis.vercel.app/",
+    githubUrl: "https://github.com/dkeval08/AI-KGenesis",
+  },
+  {
+    id: 3,
+    title: "ImageKFormat",
+    category: "Web Application",
+    shortDescription: "Free Online Image Format Converter",
+    description:
+      "Convert images between formats instantly. Support for JPEG, PNG, WebP, AVIF, and more. Fast, secure, and completely free image conversion tool with advanced AI-powered features.",
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop&q=80",
+    ],
+    technologies: [
+      "Next.js",
+      "Node.js",
+      "Express",
+      "Cloudinary",
+      "Render",
+      "Framer Motion",
+      "Tailwind CSS",
+    ],
+    features: [
+      {
+        icon: <Zap className="w-6 h-6" />,
+        title: "AI-Powered Optimization",
+        description:
+          "Automatically optimize images for web, mobile, and print with advanced AI algorithms",
+      },
+      {
+        icon: <Wand2 className="w-6 h-6" />,
+        title: "Background Removal",
+        description:
+          "Remove backgrounds instantly with precision using state-of-the-art machine learning",
+      },
+      {
+        icon: <Crop className="w-6 h-6" />,
+        title: "Smart Resizing",
+        description:
+          "Resize and crop images intelligently while maintaining quality and aspect ratios",
+      },
+      {
+        icon: <Filter className="w-6 h-6" />,
+        title: "Format Conversion",
+        description:
+          "Convert between multiple formats including WebP, AVIF, PNG, JPG, and more",
+      },
+    ],
+    liveUrl: "https://image-k-format.vercel.app/",
+    githubUrl: "https://github.com/dkeval08/image-k-format",
   },
 ];
 
-// Placeholder component for when image fails to load
-const PlaceholderIllustration = ({ title }) => (
-  <div className="absolute inset-0 bg-[#1a1a1a] flex items-center justify-center overflow-hidden">
-    {/* Abstract Background Pattern */}
-    <div className="absolute inset-0">
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-500/10 via-purple-500/10 to-purple-500/10" />
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
-    </div>
-
-    {/* Decorative Elements */}
-    <div className="relative z-10 flex flex-col items-center gap-4">
-      <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-500 rounded-xl flex items-center justify-center">
-        <Icon icon="ph:image-square-bold" className="w-8 h-8 text-white" />
-      </div>
-      <div className="text-center">
-        <h4 className="text-white/80 text-sm font-medium">{title}</h4>
-        <p className="text-white/40 text-xs mt-1">Placeholder Design</p>
-      </div>
-
-      {/* Decorative Circles */}
-      <div className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/10 rounded-full blur-2xl" />
-      <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/10 rounded-full blur-2xl" />
-    </div>
-  </div>
-);
-
-const ProjectCard = ({ project, index }) => {
+const ProjectCard = ({ project, index, onProjectClick }) => {
   const cardRef = useRef(null);
   const isInView = useInView(cardRef, { once: true, margin: "-100px" });
-  const [imageError, setImageError] = useState(false);
 
   return (
     <motion.div
       ref={cardRef}
-      initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative aspect-square bg-[#1a1a1a] rounded-xl overflow-hidden cursor-pointer"
+      initial={{ opacity: 0, y: 60, rotateY: 15 }}
+      animate={
+        isInView
+          ? { opacity: 1, y: 0, rotateY: 0 }
+          : { opacity: 0, y: 60, rotateY: 15 }
+      }
+      transition={{
+        duration: 0.8,
+        delay: index * 0.2,
+        type: "spring",
+        stiffness: 100,
+      }}
+      whileHover={{
+        y: -10,
+        rotateY: 5,
+        rotateX: 5,
+        scale: 1.02,
+        transition: { duration: 0.3 },
+      }}
+      onClick={() => onProjectClick(project)}
+      className="group relative aspect-[4/3] bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl overflow-hidden cursor-pointer transform-gpu perspective-1000"
+      style={{
+        transformStyle: "preserve-3d",
+        boxShadow:
+          "0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05)",
+      }}
     >
-      {/* Main Project Image or Placeholder */}
-      <div className="relative w-full h-full">
-        {!imageError ? (
-          <Image
-            src={project.image}
-            alt={project.title}
-            className="object-cover transition-transform duration-300 group-hover:scale-110"
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            onError={() => setImageError(true)}
-          />
-        ) : (
-          <PlaceholderIllustration title={project.title} />
-        )}
+      {/* Background Image */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover"
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+      </div>
 
-        {/* Overlay with project info */}
-        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="absolute bottom-6 left-6 text-white">
-            <h3 className="text-lg font-medium mb-1">{project.title}</h3>
-            <p className="text-sm text-gray-300">{project.category}</p>
-          </div>
-        </div>
+      {/* Animated Grid Overlay */}
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
 
-        {/* Small Project Images Grid */}
-        {!imageError && (
-          <div className="absolute top-4 right-4 grid grid-cols-2 gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            {project.images.slice(0, 4).map((img, i) => (
-              <div
+      {/* Glowing Border Effect */}
+      <div
+        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        style={{
+          background:
+            "linear-gradient(135deg, transparent 0%, rgba(147, 51, 234, 0.3) 50%, transparent 100%)",
+          padding: "2px",
+        }}
+      >
+        <div className="w-full h-full rounded-2xl bg-transparent" />
+      </div>
+
+      {/* Content */}
+      <div className="absolute inset-0 p-6 flex flex-col justify-between z-10">
+        {/* Category Badge */}
+        <motion.div
+          className="self-start"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: index * 0.2 + 0.3 }}
+        >
+          <span className="inline-block px-3 py-1 text-xs font-semibold text-purple-300 bg-purple-900/50 backdrop-blur-sm rounded-full border border-purple-500/30">
+            {project.category}
+          </span>
+        </motion.div>
+
+        {/* Project Info */}
+        <div className="space-y-3">
+          <motion.h3
+            className="text-2xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.2 + 0.4 }}
+          >
+            {project.title}
+          </motion.h3>
+          <motion.p
+            className="text-gray-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.2 + 0.5 }}
+          >
+            {project.shortDescription}
+          </motion.p>
+
+          {/* Tech Stack Preview */}
+          <motion.div
+            className="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.2 + 0.6 }}
+          >
+            {project.technologies.slice(0, 3).map((tech, i) => (
+              <span
                 key={i}
-                className="relative w-12 h-12 rounded-lg overflow-hidden bg-[#1a1a1a]"
+                className="px-2 py-1 text-xs text-purple-200 bg-purple-800/30 rounded-md border border-purple-500/20"
               >
-                <Image
-                  src={img}
-                  alt={`${project.title} preview ${i + 1}`}
-                  className="object-cover"
-                  fill
-                  sizes="48px"
-                  onError={(e) => {
-                    e.target.style.display = "none";
-                    e.target.parentElement.innerHTML = `
-                      <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-500/20 to-purple-500/20">
-                        <svg class="w-4 h-4 text-white/40" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                    `;
-                  }}
-                />
-              </div>
+                {tech}
+              </span>
             ))}
-          </div>
-        )}
+            {project.technologies.length > 3 && (
+              <span className="px-2 py-1 text-xs text-gray-300 bg-gray-700/50 rounded-md">
+                +{project.technologies.length - 3} more
+              </span>
+            )}
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Hover Glow Effect */}
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-64 h-32 bg-gradient-to-b from-purple-500/20 to-transparent rounded-full blur-2xl" />
       </div>
     </motion.div>
   );
 };
 
+const ProjectModal = ({ project, isOpen, onClose }) => {
+  if (!project) return null;
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={onClose}
+        >
+          <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0.5,
+              rotateY: -45,
+              z: -1000,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              rotateY: 0,
+              z: 0,
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.5,
+              rotateY: 45,
+              z: -1000,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 30,
+              duration: 0.6,
+            }}
+            className="bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl border border-purple-500/20"
+            style={{ transformStyle: "preserve-3d" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="relative p-6 border-b border-gray-700/50">
+              <button
+                onClick={onClose}
+                className="absolute top-4 right-4 p-2 text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-full transition-all duration-200"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="space-y-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-purple-300 bg-purple-900/50 rounded-full border border-purple-500/30">
+                  {project.category}
+                </span>
+                <h2 className="text-3xl font-bold text-white">
+                  {project.title}
+                </h2>
+                <p className="text-gray-300">{project.description}</p>
+              </div>
+
+              <div className="flex gap-4 mt-4">
+                <motion.a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors duration-200"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  Live Demo
+                </motion.a>
+                <motion.a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors duration-200"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Github className="w-4 h-4" />
+                  Source Code
+                </motion.a>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-6 max-h-[calc(70vh-200px)] pb-16 overflow-y-auto custom-scrollbar">
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Project Images */}
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold text-white mb-4">
+                    Project Gallery
+                  </h3>
+                  <motion.div
+                    className="relative aspect-video rounded-xl overflow-hidden"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <img
+                      src={project.image}
+                      alt={`${project.title} main`}
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
+
+                  <div className="grid grid-cols-2 gap-2">
+                    {project.images.map((img, i) => (
+                      <motion.div
+                        key={i}
+                        className="relative aspect-video rounded-lg overflow-hidden"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <img
+                          src={img}
+                          alt={`${project.title} preview ${i + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Project Details */}
+                <div className="space-y-6">
+                  {/* Technologies */}
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-4">
+                      Technologies Used
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, i) => (
+                        <motion.span
+                          key={i}
+                          className="px-3 py-2 text-sm text-purple-200 bg-purple-800/30 rounded-lg border border-purple-500/30"
+                          whileHover={{
+                            scale: 1.05,
+                            backgroundColor: "rgba(147, 51, 234, 0.5)",
+                          }}
+                        >
+                          {tech}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Features */}
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-4">
+                      Key Features
+                    </h3>
+                    <div className="space-y-4">
+                      {project.features.map((feature, i) => (
+                        <motion.div
+                          key={i}
+                          className="flex gap-3 p-3 bg-gray-800/50 rounded-lg border border-gray-700/50"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: i * 0.1 }}
+                        >
+                          <div className="flex-shrink-0 p-2 bg-purple-600/20 rounded-lg h-fit text-purple-400">
+                            {feature.icon}
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-white mb-1">
+                              {feature.title}
+                            </h4>
+                            <p className="text-sm text-gray-300">
+                              {feature.description}
+                            </p>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
 const Projects = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+
+  const categories = [
+    "All",
+    "Frontend Development",
+    "AI & Machine Learning",
+    "Web Application",
+  ];
+
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
+
+  const handleProjectClick = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedProject(null), 300);
+  };
 
   return (
     <section
       ref={sectionRef}
       id="portfolio"
-      className="relative bg-black py-12 md:py-24 overflow-hidden"
+      className="relative bg-black py-20 mx-auto max-w-7xl overflow-hidden min-h-screen"
     >
-      {/* Background Elements */}
-      {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(30,30,30,1),rgba(0,0,0,1))]" /> */}
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
-
-      {/* Animated Gradient Orbs */}
+      {/* Animated Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(147,51,234,0.1),transparent_50%)]" />
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
+          animate={{
+            x: [0, 100, 0],
+            y: [0, -50, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
+          animate={{
+            x: [0, -100, 0],
+            y: [0, 50, 0],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold text-white mb-8"
+            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-purple-300 to-purple-500 bg-clip-text text-transparent mb-4"
+            initial={{ scale: 0.5 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.4, type: "spring" }}
           >
             My Projects
           </motion.h2>
-
-          {/* Category Filter */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-6 mb-12"
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="inline-block mb-4"
           >
-            <button className="text-purple-500 px-4 py-2 rounded-full border border-purple-500">
-              All
-            </button>
-            <button className="text-gray-400 px-4 py-2 rounded-full border border-gray-700 hover:border-gray-500 hover:text-gray-300 transition-colors">
-              App Mobile Design
-            </button>
-            <button className="text-gray-400 px-4 py-2 rounded-full border border-gray-700 hover:border-gray-500 hover:text-gray-300 transition-colors">
-              Web Strategy
-            </button>
-            <button className="text-gray-400 px-4 py-2 rounded-full border border-gray-700 hover:border-gray-500 hover:text-gray-300 transition-colors">
-              Branding
-            </button>
+            <span className="text-white text-sm font-medium tracking-wider uppercase">
+              Explore my latest work showcasing innovative solutions and
+              creative designs
+            </span>
           </motion.div>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
+        {/* Category Filter */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="flex flex-wrap justify-center gap-4 mb-16"
+        >
+          {categories.map((category, index) => (
+            <motion.button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-6 py-3 rounded-full border-2 transition-all duration-300 font-medium ${
+                selectedCategory === category
+                  ? "bg-purple-600 border-purple-600 text-white shadow-lg shadow-purple-500/25"
+                  : "border-gray-600 text-gray-300 hover:border-purple-500 hover:text-purple-300"
+              }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              {category}
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
+
+        {/* Projects Grid */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          layout
+        >
+          <AnimatePresence>
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <ProjectCard
+                  project={project}
+                  index={index}
+                  onProjectClick={handleProjectClick}
+                />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
+
+      {/* Project Modal */}
+      <ProjectModal
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
+
+      {/* Custom Scrollbar Styles */}
+      <style jsx>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: #1f2937;
+          border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: #6b21a8;
+          border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: #7c3aed;
+        }
+      `}</style>
     </section>
   );
 };

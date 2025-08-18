@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
+import { handleScroll } from "./Header";
 
 const skillsData = {
   frontend: [
@@ -143,7 +144,7 @@ export const Skills = () => {
 
   return (
     <section
-      id="skills"
+      id="Skills"
       className="relative bg-black min-h-screen py-20 overflow-hidden"
     >
       {/* Animated Background */}

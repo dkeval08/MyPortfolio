@@ -3,35 +3,27 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
+export const handleScroll = (e, targetId) => {
+  e.preventDefault();
+  const element = document.getElementById(targetId);
+  if (element) {
+    const offset = 80; // Height of the fixed header
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }
+};
+
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(true);
-
-  // if (typeof window !== "undefined") {
-  //   window.addEventListener("scroll", () => {
-  //     setIsScrolled(window.scrollY > 20);
-  //   });
-  // }
-
-  const handleScroll = (e, targetId) => {
-    e.preventDefault();
-    const element = document.getElementById(targetId);
-    if (element) {
-      const offset = 80; // Height of the fixed header
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-  };
-
   const menuItems = [
     { title: "Home", href: "#home", id: "home" },
-    { title: "Services", href: "#services", id: "services" },
+    { title: "Skills", href: "#Skills", id: "Skills" },
+    { title: "Projects", href: "#Projects", id: "Projects" },
     { title: "About", href: "#about", id: "about" },
-    { title: "Portfolio", href: "#portfolio", id: "portfolio" },
     { title: "Contact", href: "#contact", id: "contact" },
   ];
 

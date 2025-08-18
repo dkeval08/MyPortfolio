@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 const Contact = () => {
@@ -9,6 +9,14 @@ const Contact = () => {
     phone: "",
     message: "",
   });
+  const [status, setStatus] = useState("idle");
+
+  const handleClick = () => {
+    setStatus("sending");
+    setTimeout(() => {
+      setStatus("success");
+    }, 3000);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -129,12 +137,68 @@ const Contact = () => {
               viewport={{ once: true }}
               className="text-right"
             >
-              <button
-                type="submit"
-                className="bg-purple-500 text-white px-8 py-3 rounded-lg hover:bg-purple-600 transition-colors"
+              <motion.button
+                type="button"
+                onClick={handleClick}
+                whileTap={{ scale: 0.95 }}
+                animate={
+                  status === "sending"
+                    ? {
+                        scale: [1, 1.08, 1],
+                        rotate: [0, 2, -2, 0],
+                        boxShadow: [
+                          "0 0 0px rgba(59,130,246,0.5)",
+                          "0 0 15px rgba(59,130,246,0.8)",
+                          "0 0 25px rgba(59,130,246,1)",
+                          "0 0 15px rgba(59,130,246,0.8)",
+                          "0 0 0px rgba(59,130,246,0.5)",
+                        ],
+                        transition: {
+                          repeat: Infinity,
+                          duration: 1.2,
+                          ease: "easeInOut",
+                        },
+                      }
+                    : status === "success"
+                    ? {
+                        scale: [1, 1.15, 1],
+                        boxShadow: [
+                          "0 0 0px rgba(34,197,94,0.5)",
+                          "0 0 20px rgba(34,197,94,0.8)",
+                          "0 0 35px rgba(34,197,94,1)",
+                          "0 0 20px rgba(34,197,94,0.8)",
+                          "0 0 0px rgba(34,197,94,0.5)",
+                        ],
+                        transition: { duration: 1, ease: "easeOut" },
+                      }
+                    : { scale: 1 }
+                }
+                className={`relative overflow-hidden px-8 w-[200px] py-3 rounded-lg text-white font-medium transition-colors duration-500
+                ${
+                  status === "idle"
+                    ? "bg-purple-500 hover:bg-purple-600"
+                    : status === "sending"
+                    ? "bg-gradient-to-r from-blue-500 to-blue-700"
+                    : "bg-gradient-to-r from-green-500 to-green-700"
+                }`}
               >
-                Send
-              </button>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={status}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                    className="inline-block"
+                  >
+                    {status === "idle"
+                      ? "Send"
+                      : status === "sending"
+                      ? "Sending..."
+                      : "Send Successful"}
+                  </motion.span>
+                </AnimatePresence>
+              </motion.button>
             </motion.div>
           </form>
         </motion.div>

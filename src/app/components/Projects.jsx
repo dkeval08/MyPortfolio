@@ -25,7 +25,7 @@ const projects = [
     shortDescription: "Personal portfolio showcasing my skills and projects",
     description:
       "A modern, responsive portfolio website built with Next.js and React, featuring smooth animations, dark theme design, and showcasing my development skills and projects. The site includes interactive elements, project galleries, and contact functionality.",
-    image: "/logo.png",
+    image: "/portfolio-1.png",
     images: [
       "/portfolio-1.png",
       "/portfolio-2.png",
@@ -68,7 +68,7 @@ const projects = [
     shortDescription: "AI Image Generator - Create stunning images with AI",
     description:
       "Create, save, and share stunning AI-generated images instantly. No login required – simple, fast, and creative. Built with cutting-edge AI models for high-quality image generation.",
-    image: "/ai-k-genesis-logo.png",
+    image: "/ai-k-genesis-1.png",
     images: [
       "/ai-k-genesis-1.png",
       "/ai-k-genesis-2.png",
@@ -118,7 +118,7 @@ const projects = [
     shortDescription: "Free Online Image Format Converter",
     description:
       "Convert images between formats instantly. Support for JPEG, PNG, WebP, AVIF, and more. Fast, secure, and completely free image conversion tool with advanced AI-powered features.",
-    image: "/image-k-format-logo.png",
+    image: "/image-k-format-1.png",
     images: [
       "/image-k-format-1.png",
       "/image-k-format-2.png",
@@ -195,7 +195,7 @@ const ProjectCard = ({ project, index, onProjectClick }) => {
         transition: { duration: 0.3 },
       }}
       onClick={() => onProjectClick(project)}
-      className="group relative aspect-[4/3] bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl overflow-hidden cursor-pointer transform-gpu perspective-1000"
+      className="group relative  aspect-[4/3] bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl overflow-hidden cursor-pointer transform-gpu perspective-1000"
       style={{
         transformStyle: "preserve-3d",
         boxShadow:
@@ -207,7 +207,7 @@ const ProjectCard = ({ project, index, onProjectClick }) => {
         <motion.img
           src={project.image}
           alt={project.title}
-          className="w-full h-full scale-110 object-cover"
+          className="w-full h-full object-cover"
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
@@ -514,7 +514,7 @@ const Projects = () => {
   return (
     <section
       ref={sectionRef}
-      id="portfolio"
+      id="Projects"
       className="relative bg-black py-20 mx-auto max-w-7xl overflow-hidden min-h-screen"
     >
       {/* Animated Background */}

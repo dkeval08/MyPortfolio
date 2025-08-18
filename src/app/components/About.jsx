@@ -191,7 +191,7 @@ export const About = () => {
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
+                    transition={{ delay: 0 }}
                     className="absolute bottom-6 left-6 right-6"
                   >
                     <div className="bg-black/40 backdrop-blur-md rounded-xl p-4 border border-white/10">

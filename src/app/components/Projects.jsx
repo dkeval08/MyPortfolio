@@ -236,7 +236,7 @@ const ProjectCard = ({ project, index, onProjectClick }) => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: index * 0.2 + 0.3 }}
         >
-          <span className="inline-block px-3 py-1 text-xs font-semibold text-purple-300 bg-purple-900/50 backdrop-blur-sm rounded-full border border-purple-500/30">
+          <span className="hidden px-3 py-1 text-xs font-semibold text-purple-300 bg-purple-900/50 backdrop-blur-sm rounded-full border border-purple-500/30">
             {project.category}
           </span>
         </motion.div>

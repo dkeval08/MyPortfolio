@@ -25,13 +25,13 @@ const projects = [
     shortDescription: "Personal portfolio showcasing my skills and projects",
     description:
       "A modern, responsive portfolio website built with Next.js and React, featuring smooth animations, dark theme design, and showcasing my development skills and projects. The site includes interactive elements, project galleries, and contact functionality.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80",
+    image: "/logo.png",
     images: [
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=300&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=400&h=300&fit=crop&q=80",
+      "/portfolio-1.png",
+      "/portfolio-2.png",
+      "/portfolio-3.png",
+      "/portfolio-4.png",
+      "/portfolio-5.png",
     ],
     technologies: [
       "Next.js",
@@ -68,13 +68,13 @@ const projects = [
     shortDescription: "AI Image Generator - Create stunning images with AI",
     description:
       "Create, save, and share stunning AI-generated images instantly. No login required – simple, fast, and creative. Built with cutting-edge AI models for high-quality image generation.",
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&q=80",
+    image: "/ai-k-genesis-logo.png",
     images: [
-      "https://images.unsplash.com/photo-1686191128892-12460f12b1d7?w=400&h=300&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1684487747385-8c2b2a5a4c8f?w=400&h=300&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1675557009874-4c93af1b7f27?w=400&h=300&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1682687982183-c2937a74257c?w=400&h=300&fit=crop&q=80",
+      "/ai-k-genesis-1.png",
+      "/ai-k-genesis-2.png",
+      "/ai-k-genesis-3.png",
+      "/ai-k-genesis-4.png",
+      "/ai-k-genesis-5.png",
     ],
     technologies: [
       "Next.js",
@@ -118,13 +118,15 @@ const projects = [
     shortDescription: "Free Online Image Format Converter",
     description:
       "Convert images between formats instantly. Support for JPEG, PNG, WebP, AVIF, and more. Fast, secure, and completely free image conversion tool with advanced AI-powered features.",
-    image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&q=80",
+    image: "/image-k-format-logo.png",
     images: [
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=300&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop&q=80",
+      "/image-k-format-1.png",
+      "/image-k-format-2.png",
+      "/image-k-format-3.png",
+      "/image-k-format-4.png",
+      "/image-k-format-5.png",
+      "/image-k-format-6.png",
+      "/image-k-format-7.png",
     ],
     technologies: [
       "Next.js",
@@ -205,7 +207,7 @@ const ProjectCard = ({ project, index, onProjectClick }) => {
         <motion.img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full scale-110 object-cover"
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
@@ -392,27 +394,29 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                     whileHover={{ scale: 1.02 }}
                   >
                     <img
-                      src={project.image}
+                      src={project.images?.[0]}
                       alt={`${project.title} main`}
                       className="w-full h-full object-cover"
                     />
                   </motion.div>
 
                   <div className="grid grid-cols-2 gap-2">
-                    {project.images.map((img, i) => (
-                      <motion.div
-                        key={i}
-                        className="relative aspect-video rounded-lg overflow-hidden"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <img
-                          src={img}
-                          alt={`${project.title} preview ${i + 1}`}
-                          className="w-full h-full object-cover"
-                        />
-                      </motion.div>
-                    ))}
+                    {project.images
+                      ?.filter((image, index) => index != 0)
+                      .map((img, i) => (
+                        <motion.div
+                          key={i}
+                          className="relative aspect-video rounded-lg overflow-hidden"
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <img
+                            src={img}
+                            alt={`${project.title} preview ${i + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </motion.div>
+                      ))}
                   </div>
                 </div>
 

@@ -48,8 +48,13 @@ const Header = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-2xl font-bold text-purple-500"
+            className="text-2xl flex items-center gap-1 font-bold text-purple-500"
           >
+            {/* <div className="relative">
+              <div className="w-10 h-10 bg-gradient-to-br text-white from-purple-400 to-purple-600 rounded-xl flex items-center justify-center shadow-xl">
+                K
+              </div>
+            </div>{" "} */}
             My Portfolio
           </motion.div>
 
